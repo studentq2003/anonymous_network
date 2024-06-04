@@ -1,5 +1,3 @@
-import uuid
-from datetime import datetime
 from typing import Any, Union
 
 from pydantic import BaseModel
@@ -8,6 +6,7 @@ from pydantic import BaseModel
 class PostBase(BaseModel):
     title: str
     description: Union[str, None] = None
+    private: str = Union["public", "private"]
 
 
 class PostCreate(PostBase):
